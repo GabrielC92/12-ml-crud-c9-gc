@@ -44,7 +44,7 @@ const controller = {
 				discount: +discount,
 				category,
 				description,
-				image: 'default-image.png'
+				image: req.file ? req.file.filename : 'default-image.png'
 			}
 			products.push(product);
 			fs.writeFileSync(productsFilePath,JSON.stringify(products,null,2),'utf-8');
